@@ -1,7 +1,4 @@
 const { exec } = require("child_process");
-const { finished } = require("stream");
- 
-const videoPath = "/tmp/x/";
 
 function shell(command) {
 	return new Promise((resolve, reject) => {
