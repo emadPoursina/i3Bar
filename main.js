@@ -36,12 +36,21 @@ async function battryGenerator() {
 	return final;
 }
 
+async function dateGenerator() {
+	let date = await shell("date");
+	date = date.trim();
+	const final = {name: "Date", full_text: date};
+
+	return final;
+}
+
 console.log('{ "version": 1 }');
 console.log("[");
 console.log("[],");
 
 setInterval(async () => {
 	const battry = await battryGenerator();
+	const date = await dateGenerator();
 
-	console.log(`[${JSON.stringify(battry)}],`);
+	console.log(`[${JSON.stringify(battry)}, ${JSON.stringify(date)}],`);
 }, 1000);
