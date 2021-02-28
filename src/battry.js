@@ -8,6 +8,9 @@ function acpi() {
         reject(code);
       }else{
         const battery = batteryGenerator(output);
+
+        // Extracting the \n form string
+        resolve(i3Object(battery).slice(0, i3Object(battery).indexOf('\\')) + i3Object(battery).slice(i3Object(battery).indexOf('\\') + 2))
       }
     });
   })
