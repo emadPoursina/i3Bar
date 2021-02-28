@@ -1,12 +1,12 @@
 {
-  "name": "i3Bar",
+  "name": "i3-status-bar",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is an i3 status bar sample",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js ",
+    "background": "node main.js&;disown"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Emad",
   "license": "ISC"
 }
