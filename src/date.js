@@ -1,7 +1,19 @@
 function dateMaker() {
-  const date = new Date();
-
-  return date.toString().substring(0, date.toString().indexOf('G')-1);
+  return i3Object();
 }
 
-module.exports = dateMaker;
+/**
+ * Return an i3 bar json string
+ */
+function i3Object() {
+  const date = new Date();
+
+  const i3Object = {
+    name: "time",
+    full_text: date.toString().substring(0, date.toString().indexOf('G')-1),
+  };
+
+  return JSON.stringify(i3Object);
+}
+
+module.exports = dateMaker();
