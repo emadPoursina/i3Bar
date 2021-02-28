@@ -9,3 +9,9 @@ console.log("{ \"version\": 1 }");
 console.log("[");
 
 console.log("[],");
+
+async function barGenerator() {
+
+}
+
+setInterval(barGenerator, 1000);
