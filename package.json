@@ -8,5 +8,8 @@
     "background": "node main.js&;disown"
   },
   "author": "Emad",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  }
 }
