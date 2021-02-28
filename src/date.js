@@ -1,7 +1,7 @@
 const date = new Date();
 
 function dateMaker() {
-  return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+  return date.toString().substring(0, date.toString().indexOf('G')-1);
 }
 
 module.exports = dateMaker;
