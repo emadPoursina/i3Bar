@@ -36,13 +36,13 @@ function batteryGenerator(acpiOutput) {
 function i3Object(battery) {
   const i3Object = {
     name: "battryStatus",
-    full_text: `${battery.status} ${battery.remainingPercentage}`,
+    full_text: `${battery.status} ${battery.remainingPercentage.trim()}`,
   };
 
   if(battery.status === 'Charging')
     i3Object.full_text += ' ' + battery.remainingTime.substring(0, 8);
 
-  const battPer = parseInt(battery.remainingPercentage.substring(0, 2));
+  const battPer = parseInt(battery.remainingPercentage.substring(0, battery.remainingPercentage.indexOf('%')));
   if(battery.status === 'Charging'){
 		i3Object.color = '#00FF00';
 	}else if(battPer < 15){
