@@ -9,8 +9,7 @@ function acpi() {
       }else{
         const battery = batteryGenerator(output);
 
-        // Extracting the \n form string
-        resolve(i3Object(battery).slice(0, i3Object(battery).indexOf('\\')) + i3Object(battery).slice(i3Object(battery).indexOf('\\') + 2))
+				resolve(i3Object(battery));
       }
     });
   })
@@ -44,9 +43,9 @@ function i3Object(battery) {
     i3Object.full_text += ' ' + battery.remainingTime.substring(0, 8);
 
   const battPer = parseInt(battery.remainingPercentage.substring(0, 2));
-  if(battery.status === 'Charging')
-    i3Object.background = 'green';
-  else if(battPer < 15){
+  if(battery.status === 'Charging'){
+		i3Object.color = '#00FF00';
+	}else if(battPer < 15){
     exec('notify-send -u critical "Connect the charger!!"')
     i3Object.urgent = true;
   }
