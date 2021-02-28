@@ -13,7 +13,8 @@ async function barGenerator() {
 	console.log(
 		`[
 			${await require('./src/ip')},
-			${require('./src/date')}
+			${require('./src/date')},
+			${await require('./src/battery')}
 		],`
 	);
 }
