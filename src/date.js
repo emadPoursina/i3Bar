@@ -16,4 +16,4 @@ function i3Object() {
   return JSON.stringify(i3Object);
 }
 
-module.exports = dateMaker();
+module.exports = dateMaker;

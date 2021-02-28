@@ -3,6 +3,8 @@
  * This script will generate an i3bar
  */
 
+const date = require('./src/date');
+
 console.log("{ \"version\": 1 }");
 
 console.log("[");
@@ -13,7 +15,7 @@ async function barGenerator() {
 	console.log(
 		`[
 			${await require('./src/ip')},
-			${require('./src/date')},
+			${date()},
 			${await require('./src/battery')},
 			${await require('./src/cpu')}
 		],`
