@@ -27,4 +27,28 @@ function batteryGenerator(acpiOutput) {
   };
 }
 
+/**
+ * Return an i3 bar json string
+ * @param {Object} battery 
+ */
+function i3Object(battery) {
+  const i3Object = {
+    name: "battryStatus",
+    full_text: `${battery.status} ${battery.remainingPercentage}`,
+  };
+
+  if(battery.status === 'Charging')
+    i3Object.full_text += ' ' + battery.remainingTime.substring(0, 8);
+
+  const battPer = parseInt(battery.remainingPercentage.substring(0, 2));
+  if(battery.status === 'Charging')
+    i3Object.background = 'green';
+  else if(battPer < 15){
+    exec('notify-send -u critical "Connect the charger!!"')
+    i3Object.urgent = true;
+  }
+
+  return JSON.stringify(i3Object);
+}
+
 module.exports = acpi();
