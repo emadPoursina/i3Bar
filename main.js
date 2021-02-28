@@ -2,19 +2,6 @@
  * This script will generate an i3bar
  */
 
-const { exec } = require("child_process");
-
-function shell(command) {
-	return new Promise((resolve, reject) => {
-		exec(command, (err, result) => {
-			if(err) {
-				return reject(new Error(err));
-			}
-			return resolve(result);
-		});
-	});
-}
-
 console.log("{ \"version\": 1 }");
 
 console.log("[");
