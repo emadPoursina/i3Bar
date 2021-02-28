@@ -7,9 +7,22 @@ function ipMaker() {
         console.log(stderr);
         reject(code);
       }else
-        resolve(stdout.trim());
+        resolve(i3Object(stdout));
     });
   })
 }
 
-module.exports = ipMaker;
+/**
+ * Return an i3 bar json string
+ * @param {String} stdout 
+ */
+function i3Object(stdout) {
+  const i3Object = {
+    name: "localIpAddressV4", 
+    full_text: "iPv4: " + stdout.trim(),
+  };
+
+  return JSON.stringify(i3Object);
+}
+
+module.exports = ipMaker();
