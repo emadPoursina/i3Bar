@@ -12,7 +12,8 @@ console.log("[],");
 async function barGenerator() {
 	console.log(
 		`[
-			${await require('./src/ip')}
+			${await require('./src/ip')},
+			${require('./src/date')}
 		],`
 	);
 }
