@@ -16,8 +16,7 @@ async function barGenerator() {
 		`[
 			${await require('./src/ip')},
 			${date()},
-			${await require('./src/battery')},
-			${await require('./src/cpu')}
+			${await require('./src/battery')}
 		],`
 	);
 }
