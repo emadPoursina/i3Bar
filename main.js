@@ -5,7 +5,7 @@
 
 const date = require('./src/date');
 
-console.log("{ \"version\": 1 }");
+console.log('{ "version": 1, "click_events": true }');
 
 console.log("[");
 
