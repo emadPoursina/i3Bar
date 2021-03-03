@@ -1,5 +1,6 @@
 const readline = require('readline');
 const logFile = require('fs').createWriteStream('/home/emad/NodeTown/i3Bar/log');
+const { exec } = require('child_process');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -13,6 +14,9 @@ rl.on('line', function(line){
       if(line[0] === ',')
         line = line.slice(1);
       const b = JSON.parse(line);
+      if(b.name === 'changebackground') {
+        exec('find /home/emad/Pictures/Background/ | shuf -n1 | feh --bg-max -f-', { silent: true });
+      }
     }else {
       flag = true;
     }
