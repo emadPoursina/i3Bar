@@ -5,6 +5,7 @@
 
 
 const date = require('./src/date');
+const battery = require('./src/battery');
 require('./src/click');
 
 console.log('{ "version": 1, "click_events": true }');
@@ -18,7 +19,7 @@ async function bargenerator() {
 		`[
 			${await require('./src/ip')},
 			${date()},
-			${await require('./src/battery')},
+			${await battery()},
 			{
 				"name": "changebackground", 
 				"full_text": "😈Change Background"

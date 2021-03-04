@@ -53,4 +53,4 @@ function i3Object(battery) {
   return JSON.stringify(i3Object);
 }
 
-module.exports = acpi();
+module.exports = acpi;
