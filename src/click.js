@@ -19,6 +19,9 @@ rl.on('line', function(line){
         case 'changebackground':
           exec('find /home/emad/Pictures/Background/ | shuf -n1 | feh --bg-max -f-', { silent: true });
           break;
+        case 'uniCal':
+          exec('xdg-open /home/emad/Downloads/uniCal.png', { silent:true });
+          break;
       }
     }else {
       flag = true;
