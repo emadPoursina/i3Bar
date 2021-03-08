@@ -13,9 +13,12 @@ rl.on('line', function(line){
     if(flag) {
       if(line[0] === ',')
         line = line.slice(1);
-      const b = JSON.parse(line);
-      if(b.name === 'changebackground') {
-        exec('find /home/emad/Pictures/Background/ | shuf -n1 | feh --bg-max -f-', { silent: true });
+      const { name } = JSON.parse(line);
+
+      switch (name) {
+        case 'changebackground':
+          exec('find /home/emad/Pictures/Background/ | shuf -n1 | feh --bg-max -f-', { silent: true });
+          break;
       }
     }else {
       flag = true;
