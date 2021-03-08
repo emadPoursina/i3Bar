@@ -6,6 +6,7 @@
 
 const date = require('./src/date');
 const battery = require('./src/battery');
+const helper = require('./src/Helper');
 require('./src/click');
 
 console.log('{ "version": 1, "click_events": true }');
@@ -22,8 +23,9 @@ async function bargenerator() {
 			${await battery()},
 			{
 				"name": "changebackground", 
-				"full_text": "😈Change Background"
-			}
+				"full_text": "🌅"
+			},
+			${helper.simple('📕', 'uniCal')}
 		],`
 	);
 }
